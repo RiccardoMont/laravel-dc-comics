@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+}
+
+header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(85, 21, 162);
+
+
+    & .logo {
+
+        padding: 0 1rem;
+
+        & span {
+            font-size: 40px;
+            font-weight: 600;
+            color: rgb(243, 220, 129);
+        }
+
+        & span:hover {
+            color: rgb(235, 194, 28);
+        }
+    }
+
+    & nav {
+
+        & ul {
+            list-style: none;
+            display: flex;
+
+
+            & a {
+                text-decoration: none;
+                margin: 0 2rem;
+            }
+
+            & li {
+                padding: 1rem;
+                font-weight: 500;
+                font-size: 20px;
+                color: rgb(243, 220, 129);
+            }
+
+            & li:hover {
+
+                background-color: rgb(59, 15, 113);
+                color: rgb(235, 194, 28);
+
+            }
+
+        }
+    }
+}

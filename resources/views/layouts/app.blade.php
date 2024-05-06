@@ -7,29 +7,24 @@
 
     <title>Comics</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
 </head>
+
 <body>
-    
-<header>
-<h1>Header layout app Comic</h1>
-
-</header>
 
 
-<main>
-    @yield('content')
-</main>
+    @include('partials.header')
 
-<footer>
+    <main>
+        @yield('content')
+    </main>
 
-<h3>&copy; footer</h3>
-
-
-</footer>
-
+    @include('partials.footer')
 
 </body>

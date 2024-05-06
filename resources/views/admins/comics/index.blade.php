@@ -38,6 +38,9 @@
     </tbody>
 </table>
 
+<a href="{{route('comics.create')}}">
+    <button>Aggiungi comic</button>
+</a>
 
 
 @endsection

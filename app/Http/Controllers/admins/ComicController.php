@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admins;
 
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use App\Http\Controllers\Controller;
+use Symfony\Component\HttpKernel\Event\ViewEvent;
 
 class ComicController extends Controller
 {
@@ -14,6 +16,7 @@ class ComicController extends Controller
     {
         //
         $comics = Comic::all();
+
         return view('admins.comics.index', compact('comics'));
     }
 
@@ -23,6 +26,8 @@ class ComicController extends Controller
     public function create()
     {
         //
+
+        return view('admins.comics.create');
     }
 
     /**
@@ -31,6 +36,34 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //
+
+        $data = $request->all();
+
+        //dd($data);
+
+
+
+        $comic = new Comic();
+        //Metodo esteso funzionante
+        /*
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+        $comic->save();
+        */
+
+        //Metodo fill funzionante
+        $comic->fill($data);
+        $comic->save();
+
+
+        
+        return to_route('comics.index');
+        //return redirect()->route('comics.index');
     }
 
     /**
