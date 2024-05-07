@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+:root{
+    --bgheader-violet: rgb(85, 21, 162);
+    --hover-bgheader-violet: rgb(59, 15, 113);
+    --textheader-yellow: rgb(243, 220, 129);
+    --hover-textheader-yellow: rgb(235, 194, 28);
+}
+
+
 body {
     font-family: "Oswald", sans-serif;
 }
@@ -13,7 +21,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(85, 21, 162);
+    background-color: var(--bgheader-violet);
 
 
     & .logo {
@@ -23,11 +31,11 @@ header {
         & span {
             font-size: 40px;
             font-weight: 600;
-            color: rgb(243, 220, 129);
+            color: var(--textheader-yellow);
         }
 
         & span:hover {
-            color: rgb(235, 194, 28);
+            color: var(--hover-textheader-yellow);
         }
     }
 
@@ -47,16 +55,87 @@ header {
                 padding: 1rem;
                 font-weight: 500;
                 font-size: 20px;
-                color: rgb(243, 220, 129);
+                color: var(--textheader-yellow);
             }
 
             & li:hover {
 
-                background-color: rgb(59, 15, 113);
-                color: rgb(235, 194, 28);
+                background-color: var(--hover-bgheader-violet);
+                color: var(--hover-textheader-yellow);
 
             }
 
         }
+    }
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    
+    & .container{
+        width: 90%;
+
+        & table {
+            margin: 2rem 0;
+            border-collapse: collapse;
+
+            & tr{
+                border-bottom: 1px solid var(--bgheader-violet);
+              
+            }
+
+            & th {
+                border-bottom: 10px solid var(--bgheader-violet);
+            }
+
+            & td {
+                padding: 8px 0;
+            };
+
+            
+        }
+
+        & .add-comic{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+
+            & button{
+                padding: 0.5rem 1rem;
+                border-radius: 17px;
+                border: 0px;
+                background-color: var(--bgheader-violet);
+                color: var(--textheader-yellow);
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            & button:hover{
+                background-color: var(--hover-bgheader-violet);
+                color: var(--hover-textheader-yellow);
+            }
+
+        }
+    }
+
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bgheader-violet);
+    padding: 1rem;
+    display: flex;
+    justify-content: end;
+
+    & span {
+        
+        color: var(--textheader-yellow);
+        font-size: 20px;
+        font-weight: 300;
     }
 }
