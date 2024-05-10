@@ -1,48 +1,71 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <table>
-        <thead>
-            <tr>
-                <th>Titolo</th>
-                <th>Descrizione</th>
-                <th>Thumb</th>
-                <th>Prezzo</th>
-                <th>Serie</th>
-                <th>Data uscita</th>
-                <th>Tipologia</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse ($comics as $comic)
-            <tr>
-                <td>{{$comic->title}}</td>
-                <td>{{$comic->description}}</td>
-                <td><img style="width: 100px;" src="{{$comic->thumb}}" alt=""></td>
-                <td>{{$comic->price}}$</td>
-                <td>{{$comic->series}}</td>
-                <td>{{$comic->sale_date}}</td>
-                <td>{{$comic->type}}</td>
-            </tr>
-            @empty
-            <tr>
-                <td>No content here</td>
-            </tr>
-            @endforelse
 
-        </tbody>
-    </table>
-    <div class="add-comic">
-        <a href="{{route('comics.create')}}">
-            <button>Aggiungi comic</button>
-        </a>
-    </div>
+<table>
+    <thead>
+        <tr>
+            <th>Titolo</th>
+            <th>Descrizione</th>
+            <th>Thumb</th>
+            <th>Prezzo</th>
+            <th>Serie</th>
+            <th>Data uscita</th>
+            <th>Tipologia</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @forelse ($comics as $comic)
+        <tr>
+            <td>{{$comic->title}}</td>
+            <td>{{$comic->description}}</td>
+            <td><a href="{{route('comics.show', $comic)}}"><img style="width: 100px;" src="{{$comic->thumb}}" alt=""></a></td>
+            <td>{{$comic->price}}$</td>
+            <td>{{$comic->series}}</td>
+            <td>{{$comic->sale_date}}</td>
+            <td>{{$comic->type}}</td>
+            <td>
+                <div>
+                    <a href="{{route('comics.edit', $comic)}}"><i class="fa-solid fa-pencil"></i></a>
+                    <i class="fa-solid fa-trash" onclick="document.getElementById('{{$comic->id}}').style.display='block'"></i>
+                    <div id="{{$comic->id}}" class="modal">
+                        <div class="modal-content">
+                            <span onclick="document.getElementById('{{$comic->id}}').style.display= 'none'" class="close">&times;</span>
+                            <div class="modal-texts">
+                                <h2>Procedere con la cancellazione definitiva?</h2>
+                                <p>Vuoi procedere alla cancellazione di <strong>{{$comic->title}}</strong></p>
+                            </div>
+                            <div class="modal-buttons">
+                                <form action="{{route('comics.destroy', $comic)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="red button">Cancella</button>
+                                </form>
+                                <button class="grey button" onclick="document.getElementById('{{$comic->id}}').style.display= 'none'">Annulla</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        @empty
+        <tr>
+            <td>No content here</td>
+        </tr>
+        @endforelse
+
+    </tbody>
+</table>
+<div class="add-comic">
+    <a href="{{route('comics.create')}}">
+        <button>Aggiungi comic</button>
+    </a>
 </div>
 
 
 
 
 
-@endsection
 
+@endsection
