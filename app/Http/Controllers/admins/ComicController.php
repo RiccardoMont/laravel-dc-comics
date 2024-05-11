@@ -37,6 +37,17 @@ class ComicController extends Controller
     {
         //
 
+        $val_data = $request->validate([
+            'title' => 'required|max:200',
+            'description' => 'required|max:2500',
+            'thumb' => 'required',
+            'price' => 'required',
+            'series' => 'required|max:100',
+            'sale_date' => 'required',
+            'type' => 'required|max:100'
+        ]);
+
+        //dd($val_data);
         $data = $request->all();
 
         //dd($data);
@@ -57,7 +68,7 @@ class ComicController extends Controller
         */
 
         //Metodo fill funzionante
-        $comic->fill($data);
+        $comic->fill($val_data);
         $comic->save();
 
 
