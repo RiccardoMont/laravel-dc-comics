@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <table>
     <thead>
         <tr>
@@ -19,7 +21,7 @@
         @forelse ($comics as $comic)
         <tr>
             <td>{{$comic->title}}</td>
-            <td>{{$comic->description}}</td>
+            <td>{{$comic->description ?? 'N/A'}}</td>
             <td><a href="{{route('comics.show', $comic)}}"><img style="width: 100px;" src="{{$comic->thumb}}" alt=""></a></td>
             <td>{{$comic->price}}$</td>
             <td>{{$comic->series}}</td>
@@ -28,7 +30,7 @@
             <td>
                 <div>
                     <a href="{{route('comics.edit', $comic)}}"><i class="fa-solid fa-pencil"></i></a>
-                    <i class="fa-solid fa-trash" onclick="document.getElementById('{{$comic->id}}').style.display='block'"></i>
+                    <i class="fa-solid fa-trash icon" onclick="document.getElementById('{{$comic->id}}').style.display='block'"></i>
                     <div id="{{$comic->id}}" class="modal">
                         <div class="modal-content">
                             <span onclick="document.getElementById('{{$comic->id}}').style.display= 'none'" class="close">&times;</span>
@@ -59,7 +61,7 @@
 </table>
 <div class="add-comic">
     <a href="{{route('comics.create')}}">
-        <button>Aggiungi comic</button>
+        <button class="purple-button">Aggiungi comic</button>
     </a>
 </div>
 
@@ -69,3 +71,37 @@
 
 
 @endsection
+
+<style type="text/css">
+    table {
+        margin: 2rem 0;
+        border-collapse: collapse;
+
+        & tr {
+            border-bottom: 1px solid var(--bgheader-violet);
+
+        }
+
+        & th {
+            border-bottom: 10px solid var(--bgheader-violet);
+        }
+
+        & td {
+            padding: 8px 0;
+        }
+
+        ;
+
+
+    }
+
+    .add-comic {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+
+
+
+    }
+</style>
