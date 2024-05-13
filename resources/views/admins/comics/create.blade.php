@@ -113,8 +113,5 @@
         display: flex;
         justify-content: start;
         margin: 2rem 0;
-
-
-
     }
 </style>

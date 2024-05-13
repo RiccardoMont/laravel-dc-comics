@@ -30,7 +30,7 @@
             <td>
                 <div>
                     <a href="{{route('comics.edit', $comic)}}"><i class="fa-solid fa-pencil"></i></a>
-                    <i class="fa-solid fa-trash icon" onclick="document.getElementById('{{$comic->id}}').style.display='block'"></i>
+                    <i class="fa-solid fa-trash" onclick="document.getElementById('{{$comic->id}}').style.display='block'"></i>
                     <div id="{{$comic->id}}" class="modal">
                         <div class="modal-content">
                             <span onclick="document.getElementById('{{$comic->id}}').style.display= 'none'" class="close">&times;</span>
@@ -61,7 +61,7 @@
 </table>
 <div class="add-comic">
     <a href="{{route('comics.create')}}">
-        <button class="purple-button">Aggiungi comic</button>
+        <button class="purple-button">+</button>
     </a>
 </div>
 
@@ -74,7 +74,7 @@
 
 <style type="text/css">
     table {
-        margin: 2rem 0;
+        margin-top: 2rem;
         border-collapse: collapse;
 
         & tr {
@@ -87,10 +87,36 @@
         }
 
         & td {
-            padding: 8px 0;
+            padding: 1.5rem 1rem;
+
+            & a {
+                text-decoration: none;
+                color: black;
+
+                & i{
+                    color: var(--bgheader-violet);
+                }
+
+                & i:hover{
+                    color: var(--text-black);
+                }
+            }
+
+
+            & i {
+                margin-top: 10px;
+                font-size: 1.5em;
+                cursor: pointer;
+                color: var(--button-red);
+            }
+
+            & i:hover {
+                color: var(--button-scarlet);
+            }
+
         }
 
-        ;
+        
 
 
     }
@@ -99,9 +125,14 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        margin: 2rem 0;
+        padding: 1rem 0;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--bgheader-violet);
 
-
-
+        & button {
+            font-size: 32px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
     }
 </style>

@@ -16,6 +16,7 @@
     --button-scarlet: rgb(180, 0, 0);
     --text-white: rgb(230, 230, 230);
     --text-strongwhite: rgb(255, 255, 255);
+    --text-black: rgb(0, 0, 0);
     
 }
 
@@ -40,7 +41,7 @@ main {
 /*START BUTTONS*/
 .purple-button {
     padding: 0.5rem 1rem;
-    border-radius: 17px;
+    border-radius: 19px;
     border: 0px;
     background-color: var(--bgheader-violet);
     color: var(--textheader-yellow);
