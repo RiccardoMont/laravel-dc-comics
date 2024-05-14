@@ -21,7 +21,7 @@
 <body>
 
 
-    @include('partials.guests.header')
+    @include('partials.admins.header')
 
     <main>
         <div class="container">
@@ -29,6 +29,6 @@
         </div>
     </main>
 
-    @include('partials.guests.footer')
+    @include('partials.admins.footer')
 
 </body>

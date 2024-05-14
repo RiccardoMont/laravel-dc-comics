@@ -6,6 +6,8 @@
 
 /*Colori*/
 :root {
+    --bgbody-lightblack: rgb(85, 71, 102);
+    --bgcard-lightviolet: rgb(113, 32, 211, 0.2);
     --bgheader-violet: rgb(85, 21, 162);
     --hover-bgheader-violet: rgb(59, 15, 113);
     --textheader-yellow: rgb(243, 220, 129);
@@ -23,11 +25,17 @@
 
 body {
     font-family: "Oswald", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bgbody-lightblack);
+
 }
 
 main {
     display: flex;
     justify-content: center;
+    
 
     & .container {
         width: 90%;

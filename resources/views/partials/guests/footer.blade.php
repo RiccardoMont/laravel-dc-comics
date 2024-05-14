@@ -7,18 +7,16 @@
 
 <style type="text/css">
 
+
+
 footer {
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    left: 0;
+    margin-top: auto;
     background-color: var(--bgheader-violet);
     padding: 1rem;
     display: flex;
     justify-content: end;
-
+    
     & span {
-
         color: var(--textheader-yellow);
         font-size: 20px;
         font-weight: 300;
