@@ -60,8 +60,8 @@
     </tbody>
 </table>
 <div class="add-comic">
-    <a href="{{route('comics.create')}}">
-        <button class="purple-button">+</button>
+    <a href="{{route('comics.create')}}" role="button" class="purple-button">
+        +
     </a>
 </div>
 
@@ -76,6 +76,7 @@
     table {
         margin-top: 2rem;
         border-collapse: collapse;
+        background-color: var(--bgtable-grey);
 
         & tr {
             border-bottom: 1px solid var(--bgheader-violet);
@@ -93,11 +94,11 @@
                 text-decoration: none;
                 color: black;
 
-                & i{
+                & i {
                     color: var(--bgheader-violet);
                 }
 
-                & i:hover{
+                & i:hover {
                     color: var(--text-black);
                 }
             }
@@ -116,7 +117,7 @@
 
         }
 
-        
+
 
 
     }
@@ -128,10 +129,13 @@
         padding: 1rem 0;
         margin-bottom: 2rem;
         border-bottom: 1px solid var(--bgheader-violet);
+        background-color: var(--bgtable-grey);
 
-        & button {
-            font-size: 32px;
-            border-radius: 25px;
+        & a {
+            text-decoration: none;
+            font-size: 45px;
+            border-radius: 30px;
+            padding: 0 22px 0 22px;
             cursor: pointer;
         }
     }

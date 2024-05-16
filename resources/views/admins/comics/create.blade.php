@@ -83,22 +83,26 @@
                 border-radius: 5px;
                 border: 2px solid var(--bgheader-violet);
                 padding: 0.5rem;
+                background-color: var(--bgtable-grey);
             }
 
             & input:hover,
             input:focus{
                 box-shadow: 0px 0px 10px var(--hover-bgheader-violet);
+                background-color: var(--text-white);
             }
 
             & textarea {
                 border-radius: 5px;
                 border: 2px solid var(--bgheader-violet);
                 padding: 0.5rem;
+                background-color: var(--bgtable-grey);
             }
 
             & textarea:hover,
             textarea:focus{
                 box-shadow: 0px 0px 10px var(--hover-bgheader-violet);
+                background-color: var(--text-white);
             }
 
 
@@ -112,6 +116,10 @@
         width: 100%;
         display: flex;
         justify-content: start;
-        margin: 2rem 0;
+        margin: 2rem 0 4rem 0;
+
+        & button{
+            cursor: pointer;
+        }
     }
 </style>

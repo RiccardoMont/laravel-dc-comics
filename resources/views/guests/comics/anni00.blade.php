@@ -2,8 +2,9 @@
 
 @section('content')
 
-<h3>anni 00</h3>
+<h1>Anni '00</h1>
+<div class="row">
 @include('guests.comics.comicList')
-
+</div>
 
 @endsection

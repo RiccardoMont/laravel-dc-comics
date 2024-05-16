@@ -3,8 +3,7 @@
 @section('content')
 
 
-<h1>Nuovo sito di comics!</h1>
-<h3>prova</h3>
+<h1>Le uscite degli ultimi anni</h1>
 
 
 <div class="row">
@@ -15,10 +14,15 @@
             <img src="{{$comic->thumb}}" alt="">
         </div>
         <div class="text">
-            <h2>{{$comic->title}}</h2>
-            <em>{{$comic->sale_date}}</em>
-            
-            <span>{{$comic->price}}$</span>
+            <div class="title">
+                <h2>{{$comic->title}}</h2>
+            </div>
+            <div class="sale_date">
+                <em>{{$comic->sale_date}}</em>
+            </div>
+            <div class="price">
+                <span>{{$comic->price}}$</span>
+            </div>
         </div>
     </div>
 
@@ -40,41 +44,5 @@
 
 
 <style type="text/css">
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -1rem;
-        & .card {
-
-            width: calc((100%/12 * 3) - 2rem );
-            display: flex;
-            flex-direction: column;
-            background-color: var(--bgcard-lightviolet);
-            padding: 1rem;
-            margin: 1rem;
-            border: 2px solid var(--hover-bgheader-violet);
-            border-radius: 20px;
-
-
-            & .mask {
-
-                width: 200px;
-                max-height: 300px;
-                overflow: hidden;
-                align-self: center;
-                & img {
-                    width: 100%;
-                }
-
-            }
-
-            & .text {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-            }
-        }
-
-
-    }
+    
 </style>

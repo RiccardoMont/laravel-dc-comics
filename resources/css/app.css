@@ -12,14 +12,19 @@
     --hover-bgheader-violet: rgb(59, 15, 113);
     --textheader-yellow: rgb(243, 220, 129);
     --hover-textheader-yellow: rgb(235, 194, 28);
-    --button-grey: rgb(188, 188, 188) ;
-    --button-black: rgb(70, 70, 70) ;
+    --button-grey: rgb(188, 188, 188);
+    --button-black: rgb(70, 70, 70);
     --button-red: rgb(230, 0, 0);
     --button-scarlet: rgb(180, 0, 0);
     --text-white: rgb(230, 230, 230);
     --text-strongwhite: rgb(255, 255, 255);
     --text-black: rgb(0, 0, 0);
-    
+    --text-lightblack: rgb(15, 15, 15);
+    --bgtable-grey: rgb(189, 189, 189);
+    --hover-bordercard-darkviolet: rgb(40, 0, 88);
+    --hover-bgcard-lightviolet: rgb(113, 32, 211, 0.5);
+    --cardtext-grey: rgb(166, 162, 148);
+
 }
 
 
@@ -35,11 +40,75 @@ body {
 main {
     display: flex;
     justify-content: center;
-    
+
 
     & .container {
         width: 90%;
 
+        & h1 {
+            font-size: 45px;
+            text-align: center;
+            color: var(--text-black);
+            text-transform: uppercase;
+        }
+
+        & .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1rem;
+
+            & .card {
+
+                width: calc((100%/12 * 3) - 2rem);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: var(--bgcard-lightviolet);
+                padding: 1rem;
+                margin: 1rem;
+                border: 5px solid var(--hover-bgheader-violet);
+                border-radius: 20px;
+                cursor: pointer;
+
+
+                & .mask {
+
+                    width: 250px;
+                    max-height: 320px;
+                    overflow: hidden;
+                    align-self: center;
+                    border-radius: 5px;
+
+                    & img {
+                        width: 100%;
+                    }
+
+                }
+
+                & .text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 250px;
+                    gap: 8px;
+                    color: var(--text-black);
+                }
+            }
+
+            & .card:hover {
+
+                background-color: var(--hover-bgcard-lightviolet);
+                border: 5px solid var(--hover-bordercard-darkviolet);
+                box-shadow: 0px 0px 10px 1px var(--hover-textheader-yellow);
+
+
+                & .text {
+                    color: var(--cardtext-grey);
+                }
+            }
+
+
+        }
     }
 
 }
@@ -61,6 +130,7 @@ main {
     background-color: var(--hover-bgheader-violet);
     color: var(--hover-textheader-yellow);
 }
+
 /*END BUTTONS*/
 
 
@@ -113,36 +183,37 @@ main {
             padding: 1rem 0 0.5rem 0;
         }
 
-        & .modal-buttons{
+        & .modal-buttons {
 
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 1rem 0 0.5rem 0;
-            border-top: 1px solid var(--button-grey); 
-            & .button{
+            border-top: 1px solid var(--button-grey);
+
+            & .button {
                 padding: 8px 10px;
                 border-radius: 16px;
                 border: 0px;
                 font-weight: 600;
             }
 
-            & .grey{
+            & .grey {
                 background-color: var(--button-grey);
-                
+
             }
 
-            & .grey:hover{
+            & .grey:hover {
                 background-color: var(--button-black);
                 color: var(--text-white);
             }
 
-            & .red{
+            & .red {
                 background-color: var(--button-red);
                 color: var(--text-white);
             }
 
-            & .red:hover{
+            & .red:hover {
                 background-color: var(--button-scarlet);
                 color: var(--text-strongwhite);
             }
@@ -152,4 +223,5 @@ main {
 
     }
 }
+
 /*END MODAL*/

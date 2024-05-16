@@ -1,10 +1,37 @@
 @forelse ($comics as $comic)
 
-<p>{{$comic->title}}</p>
-<p>{{$comic->sale_date}}</p>
+<div class="card">
+    <div class="mask">
+        <img src="{{$comic->thumb}}" alt="">
+    </div>
+    <div class="text">
+        <div class="title">
+            <h2>{{$comic->title}}</h2>
+        </div>
+        <div class="sale_date">
+            <em>{{$comic->sale_date}}</em>
+        </div>
+        <div class="price">
+            <span>{{$comic->price}}$</span>
+        </div>
+    </div>
+</div>
 
 @empty
-
-<p>No comics here</p>
-
+<div class="empty-case">
+    <h3>No comics here</h3>
+</div>
 @endforelse
+
+
+<style type="text/css">
+
+    .empty-case{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+    }
+
+</style>

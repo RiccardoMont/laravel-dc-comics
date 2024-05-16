@@ -40,7 +40,7 @@ class PageController extends Controller
 
         $comics = Comic::whereBetween('sale_date', [$year2000, $year2009])->get();
 
-        return view('guests.comics.anni10', compact('comics'));
+        return view('guests.comics.anni00', compact('comics'));
 
     }
 
