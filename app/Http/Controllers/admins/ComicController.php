@@ -48,7 +48,7 @@ class ComicController extends Controller
         ]);
 
         //dd($val_data);
-        $data = $request->all();
+        //$data = $request->all();
 
         //dd($data);
 
